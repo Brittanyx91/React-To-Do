@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>My First React App</title>
@@ -9,17 +10,26 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      <script type="text/babel">
         class Name extends React.Component {
+
+          constructor(props){
+                    super(props);
+                    this.state = {
+                      number: 1394
+                    }
+                  }
+
           render() {
             return (
            <div>
-             <h1>My name is Brittany!</h1>
+             <h1>My name is Brittany {this.props.lastName}!</h1>
+             <h2>I am this many weeks old: {this.state.number}</h2>
            </div>
          );
        }
      }
 
      ReactDOM.render(
-       <Name />, document.getElementById('app')
+       <Name lastName = "Blakley"/>, document.getElementById('app')
      );
      </script>
   </body>
