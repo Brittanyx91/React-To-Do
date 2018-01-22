@@ -34,15 +34,6 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
-  removeToDos(e){
-  var array = this.state.todos.filter(function(item) {
-    return item !== e.target.value
-  });
-  this.setState({
-    todos: array
-  })
-}
-
    render() {
      return (
        <div className="App">
@@ -55,10 +46,6 @@ class App extends Component {
          <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
            <input type="submit" />
            </form>
-           <form onDelete={ (e) => this.handleDelete(e) }>
-           <input type="text" value={ this.state.deleteToDos } onChange={ (e) => this.handleChange(e) } />
-             <input type="Delete" />
-         </form>
        </div>
      );
    }
